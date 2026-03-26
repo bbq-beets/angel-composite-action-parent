@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Auto-merge protect app PR
-        uses: bbq-beets/angel-composite-action@511bda8d31293c26d7aea0ae4d9f2212e2d8846b
+        uses: bbq-beets/angel-composite-action@b4b3d0e6735a0e38da83bb6e937c819134c2626f
         with:
           gh-token: ${{ secrets.RETOOL_AUTOMERGE_TOKEN }}
