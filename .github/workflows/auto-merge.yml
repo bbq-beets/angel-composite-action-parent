@@ -10,7 +10,6 @@ permissions:
 jobs:
   auto-merge-protect-app:
     runs-on: ubuntu-latest
-    if: contains(github.head_ref, '/protect-commit-')
     steps:
       - name: Auto-merge protect app PR
         uses: bbq-beets/angel-composite-action@c4070106255712b942f3d9b245b38cf7812d4e0f
