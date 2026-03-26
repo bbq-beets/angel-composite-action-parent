@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - id: foo
-        uses: bbq-beets/angel-composite-action@2ab7b054b867e626386f2b0d8dddc85bc853eefd
+        uses: bbq-beets/angel-composite-action@f08ffbbe6ed02e5096ee433d4ea781500b4c7104
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number "$RANDOM_NUMBER"
