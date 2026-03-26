@@ -1,0 +1,21 @@
+name: Auto-Merge Protect Apps
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge-protect-app:
+    runs-on: ubuntu-latest
+    if: contains(github.head_ref, '/protect-commit-')
+    steps:
+      - name: Auto-merge protect app PR
+        uses: bbq-beets/angel-composite-action@d15ed63ea6c812222d9c40db1f8c563a5867a4c3
+        with:
+          gh-token: ${{ secrets.RETOOL_AUTOMERGE_TOKEN }}
+          repo: ${{ github.repository }}
+          pr: ${{ github.event.pull_request.number }}
