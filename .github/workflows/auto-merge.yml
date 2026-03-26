@@ -1,9 +1,6 @@
 name: Auto-Merge Protect Apps
 
 on:
-  pull_request:
-    types: [opened]
-
   workflow_dispatch: 
 
 permissions:
@@ -16,8 +13,6 @@ jobs:
     if: contains(github.head_ref, '/protect-commit-')
     steps:
       - name: Auto-merge protect app PR
-        uses: bbq-beets/angel-composite-action@d15ed63ea6c812222d9c40db1f8c563a5867a4c3
+        uses: bbq-beets/angel-composite-action@c4070106255712b942f3d9b245b38cf7812d4e0f
         with:
           gh-token: ${{ secrets.RETOOL_AUTOMERGE_TOKEN }}
-          repo: ${{ github.repository }}
-          pr: ${{ github.event.pull_request.number }}
